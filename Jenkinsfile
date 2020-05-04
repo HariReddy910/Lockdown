@@ -11,5 +11,11 @@ pipeline{
 			            url: 'https://github.com/HariReddy910/Lockdown.git']]])
 			    }
 		         }
+	    stage('Build-stage'){
+		    steps{
+		    sh label: '', script: 'mvn package'
+		    }
+	    }
+	    
         }
 }
