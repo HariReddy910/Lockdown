@@ -1,3 +1,4 @@
+currentBuild.displayName="actvello-#"+currentBuild.number
 pipeline{
      agent any
     stages{
@@ -14,6 +15,7 @@ pipeline{
 	    stage('Build-stage'){
 		    steps{
 		    sh label: '', script: 'mvn package'
+			    archiveArtifacts '**/*.war'
 		    }
 	    }
 	    
